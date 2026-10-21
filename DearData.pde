@@ -13,15 +13,28 @@ void draw() {
   line(100, 500, 100, 100);
 
   fill(0, 100, 255);
-  
-  for(int i = 0; i < steps.length; i++) {
 
-float barHeight = map(steps[i], 0, 12000, 0, 350);
+  for (int i = 0; i < steps.length; i++) {
+
+    float barHeight = map(steps[i], 0, 12000, 0, 350);
 
 
-  rect(120 + i * 100, 500 - barHeight, 60, barHeight);
+    float x = 120 + i * 100;
+
+    rect(x, 500 - barHeight, 60, barHeight);
+    
+    if(mouseX > x && mouseX < x + 60 &&
+   mouseY > 500 - barHeight && mouseY < 500) {
+
+  fill(0);
+  text(steps[i] + " steps", x, 480 - barHeight);
 
 }
 
+    fill(0);
 
+    text("Day " + (i + 1), x, 520);
+
+    fill(0, 100, 255);
+  }
 }
