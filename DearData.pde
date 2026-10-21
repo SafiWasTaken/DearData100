@@ -1,3 +1,7 @@
+
+int[] steps = {4994, 5736, 984, 3729, 15146};
+
+
 void setup() {
   size(800, 600);
 }
@@ -9,9 +13,15 @@ void draw() {
   line(100, 500, 100, 100);
 
   fill(0, 100, 255);
+  
+  for(int i = 0; i < steps.length; i++) {
 
-  rect(150, 400, 30, 100);
-  rect(220, 350, 30, 150);
-  rect(290, 300, 30, 200);
+float barHeight = map(steps[i], 0, 12000, 0, 350);
+
+
+  rect(120 + i * 100, 500 - barHeight, 60, barHeight);
+
+}
+
 
 }
