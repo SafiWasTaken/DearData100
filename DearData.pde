@@ -3,7 +3,7 @@ int[] steps = {4994, 5736, 984, 3729, 15146};
 
 
 void setup() {
-  size(800, 650);
+  size(800, 600);
 }
 
 void draw() {
@@ -22,20 +22,20 @@ void draw() {
     float x = 120 + i * 100;
 
     rect(x, 500 - barHeight, 60, barHeight);
-    
-    if(mouseX > x && mouseX < x + 60 && mouseY > 500 - barHeight && mouseY < 500) {
 
-  fill(0);
-  text(steps[i] + " steps", x, 480 - barHeight);
+    if (mouseX > x && mouseX < x + 60 && mouseY > 500 - barHeight && mouseY < 500) {
 
-}
+      fill(0);
+      text(steps[i] + " steps", x, 480 - barHeight);
+    }
 
     fill(0);
 
     text("Day " + (i + 1), x, 520);
 
-textSize(15);
-text("NUMBER OF DAYS", 325,560);
+
+    textSize(24);
+    text("Daily Steps", 300, 50);
 
     fill(0, 100, 255);
   }
