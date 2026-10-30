@@ -1,9 +1,16 @@
 
 int[] steps = {4994, 5736, 984, 3729, 15146};
 
+Table DataItems;
+
 
 void setup() {
   size(800, 600);
+
+  DataItems = loadTable("DataItems.csv", "header");
+
+  println(DataItems.getRowCount());
+}
 }
 
 void draw() {
