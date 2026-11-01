@@ -20,6 +20,17 @@ void draw() {
   line(100, 500, 700, 500);
   line(100, 500, 100, 100);
 
+fill(0);
+
+textSize(10);
+
+text("0", 70, 500);
+text("4000", 60, 410);
+text("8000", 60, 325);
+text("12000", 50, 240);
+text("16000", 50, 155);
+
+
   fill(0, 100, 255);
 
 
@@ -55,11 +66,14 @@ void draw() {
 
 //add a proper x and y headings!
 
+textSize(10);
     if (i == 0 || (i +1) % 5 ==0) {
       
- text("Day" + (i + 1), x - 15, 520);
+ text("Day" + (i + 1), x , 520);
+     
       
     }
+    
     
 
     textSize(24);
