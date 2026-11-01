@@ -1,19 +1,20 @@
 
-int[] steps = {4994, 5736, 984, 3729, 15146};
-
 Table DataItems;
 
 
 void setup() {
   size(800, 600);
 
+
   DataItems = loadTable("DataItems.csv", "header");
 
   println(DataItems.getRowCount());
 }
-}
 
 void draw() {
+  //add creative background + theme later 
+  
+  
   background(255);
 
   line(100, 500, 700, 500);
@@ -21,9 +22,14 @@ void draw() {
 
   fill(0, 100, 255);
 
-  for (int i = 0; i < steps.length; i++) {
 
-    float barHeight = map(steps[i], 0, 12000, 0, 350);
+  for (int i = 0; i < DataItems.getRowCount(); i++)
+  {
+
+
+    int steps = DataItems.getInt(i, "Daily steps");
+
+    float barHeight = map(steps, 0, 16000, 0, 350);
 
 
     float x = 120 + i * 100;
@@ -33,7 +39,7 @@ void draw() {
     if (mouseX > x && mouseX < x + 60 && mouseY > 500 - barHeight && mouseY < 500) {
 
       fill(0);
-      text(steps[i] + " steps", x, 480 - barHeight);
+      text(steps + " steps", x, 480 - barHeight);
     }
 
     fill(0);
