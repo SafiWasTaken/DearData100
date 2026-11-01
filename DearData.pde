@@ -55,10 +55,12 @@ void draw() {
 
 //add a proper x and y headings!
 
-    if (i % 5 == 0) {
+    if (i == 0 || (i +1) % 5 ==0) {
+      
  text("Day" + (i + 1), x - 15, 520);
       
     }
+    
 
     textSize(24);
     text("Daily Steps", 300, 50);
