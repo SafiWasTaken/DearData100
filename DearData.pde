@@ -12,9 +12,9 @@ void setup() {
 }
 
 void draw() {
-  //add creative background + theme later 
-  
-  
+  //add creative background + theme later
+
+
   background(255);
 
   line(100, 500, 700, 500);
@@ -32,11 +32,19 @@ void draw() {
     float barHeight = map(steps, 0, 16000, 0, 350);
 
 
-    float x = 120 + i * 100;
+    //adjusting graph size
+    float graphWidth = 600;
 
-    rect(x, 500 - barHeight, 60, barHeight);
+    float barWidth = graphWidth / DataItems.getRowCount();
 
-    if (mouseX > x && mouseX < x + 60 && mouseY > 500 - barHeight && mouseY < 500) {
+    float x = 100 + i * barWidth;
+
+
+
+    rect(x, 500 - barHeight, barWidth, barHeight);
+
+
+    if (mouseX > x && mouseX < x + barWidth && mouseY > 500 - barHeight && mouseY < 500) {
 
       fill(0);
       text(steps + " steps", x, 480 - barHeight);
